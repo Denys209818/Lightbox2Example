@@ -1,0 +1,133 @@
+﻿/*Стилі для блока, який міститиме у собі модальне вікно*/
+.customDialog {
+    /*Робить блок невидимим*/
+    display: none;
+    /*Встановлює фіксовану позицію для блока*/
+    position: fixed;
+    /*Встановлення фону для блока модального вікна*/
+    background-color: rgba(29, 31, 29, 0.801);
+    /*Встановлення ширини на весь екран*/
+    width: 100%;
+    /*Встановлення висоти на весь екран*/
+    height: 100%;
+    /*Відступ від верхнього краю*/
+    top: 50%;
+    /*Відступ від лівого краю*/
+    left: 50%;
+    /*Позиціювання відносно z-index*/
+    z-index: 1000000;
+    /*Переміщення блока на половину від ширини модального вікна (Тобто якщо блок 600px то зміщення буде на 300px)*/
+    transform: translate(-50%,-50%);
+
+    .dialog {
+        /*Відображення модального вікна*/
+        display: block;
+        /*Встановлення фону для модального вікна*/
+        background-color: #ffffff;
+        /*Встановлення ширини для модального вікна*/
+        width: 600px;
+        /*Встановлення фіксованої позиції для модального вікна*/
+        position: fixed;
+        /*Відступ від лівого краю*/
+        left: 50%;
+        /*Відступ від верхнього краю*/
+        top: 50px;
+        /*Переміщення відносно осі X на половину ширини блоку модального вікна*/
+        transform: translateX(-50%);
+
+        /* Знак амперсанта означає батьківький елемент, тобто якщо не існує такого дочрнього елемента,
+        то пошук по вложених елементах дочірніх елементів не проводиться*/
+        & > header {
+            // Встановлення висоти
+            height: 55px;
+            // Фон для заголовочного блока
+            background-color: #007bff;
+
+            // Стилі для заголовка хедера
+            & > .title {
+                // Розмір шрифту
+                font-size: 20px;
+                // Позиціювання
+                float: left;
+                // Колір
+                color: white;
+                // Відступи
+                margin: 15px 0px 0px 15px;
+            }
+            // Стилі для кнопки скасувати
+            & > .btn-close {
+                // Позиціювання
+                float: right;
+                // Відступи
+                margin: 5px 10px 0px 0px;
+                // Колір
+                color: #cc3333;
+                // Розмір шрифту
+                font-size: 30px;
+                // Жирність шрифту
+                font-weight: bolder;
+                // Анімація курсора
+                cursor: pointer;
+            }
+        }
+        // Стилі для тіла модального вікна
+        & > main {
+            // Шрифт
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            // Забороняє відображення елемента разом з блоком floating. Переносить елемент на новий рядок
+            clear: both;
+            // Колір шрифту
+            color: #332f33;
+            // Розмір шрифту
+            font-size: 20px;
+            // Відступи
+            margin: 15px;
+
+            // Стиль для фотографії тіла модального вікна
+            & > img {
+                // Ширина блока фотографії
+                width: 300px;
+            }
+        }
+        // Підвал модального вікна
+        & > footer {
+            // Відступ від верхнього краю
+            margin-top: 25px;
+            // Відступ від нижнього краю
+            margin-bottom: 20px;
+            // Стилі для лінії
+            & > hr {
+                // Встановлення рамки навколо елемента
+                border: 1px #ececec solid;
+            }
+
+            // Стилі для блока з кнопками
+            & > .buttons {
+                // Позиціювання
+                float: right;
+                // Висота
+                height: 30px;
+                // Відступ
+                margin: 10px;
+            }
+            /*& > .buttons a {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                border: 1px #cccccc solid;
+                padding: 5px 10px;
+                text-decoration: none;
+                color: #333333;
+                border-radius: 5px;
+                margin: 3px;
+            }
+            & > .buttons a:hover {
+                margin: 1px;
+                border-radius: 0px;
+                padding: 7px 12px;
+            }
+            & > .buttons .danger {
+                color: #ffffff;
+                background-color: #ff6666;
+            }*/
+        }
+    }
+}

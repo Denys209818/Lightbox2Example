@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "cropperjs@1.5.12",
+      "destination": "lib/cropperjs/",
+      "files": [
+        "cropper.min.js",
+        "cropper.min.css"
+      ]
+    },
+    {
+      "library": "lightbox2@2.11.3",
+      "destination": "lib/lightbox2/",
+      "files": [
+        "js/lightbox.js",
+        "css/lightbox.css",
+        "images/close.png",
+        "images/loading.gif",
+        "images/next.png",
+        "images/prev.png"
+      ]
+    }
+  ]
+}

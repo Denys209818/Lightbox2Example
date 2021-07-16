@@ -1,0 +1,88 @@
+﻿@charset "UTF-8";
+/*Стилі для блока, який міститиме у собі модальне вікно*/
+.customDialog {
+  /*Робить блок невидимим*/
+  display: none;
+  /*Встановлює фіксовану позицію для блока*/
+  position: fixed;
+  /*Встановлення фону для блока модального вікна*/
+  background-color: rgba(29, 31, 29, 0.801);
+  /*Встановлення ширини на весь екран*/
+  width: 100%;
+  /*Встановлення висоти на весь екран*/
+  height: 100%;
+  /*Відступ від верхнього краю*/
+  top: 50%;
+  /*Відступ від лівого краю*/
+  left: 50%;
+  /*Позиціювання відносно z-index*/
+  z-index: 1000000;
+  /*Переміщення блока на половину від ширини модального вікна (Тобто якщо блок 600px то зміщення буде на 300px)*/
+  transform: translate(-50%, -50%); }
+  .customDialog .dialog {
+    /*Відображення модального вікна*/
+    display: block;
+    /*Встановлення фону для модального вікна*/
+    background-color: #ffffff;
+    /*Встановлення ширини для модального вікна*/
+    width: 600px;
+    /*Встановлення фіксованої позиції для модального вікна*/
+    position: fixed;
+    /*Відступ від лівого краю*/
+    left: 50%;
+    /*Відступ від верхнього краю*/
+    top: 50px;
+    /*Переміщення відносно осі X на половину ширини блоку модального вікна*/
+    transform: translateX(-50%);
+    /* Знак амперсанта означає батьківький елемент, тобто якщо не існує такого дочрнього елемента,
+        то пошук по вложених елементах дочірніх елементів не проводиться*/ }
+    .customDialog .dialog > header {
+      height: 55px;
+      background-color: #007bff; }
+      .customDialog .dialog > header > .title {
+        font-size: 20px;
+        float: left;
+        color: white;
+        margin: 15px 0px 0px 15px; }
+      .customDialog .dialog > header > .btn-close {
+        float: right;
+        margin: 5px 10px 0px 0px;
+        color: #cc3333;
+        font-size: 30px;
+        font-weight: bolder;
+        cursor: pointer; }
+    .customDialog .dialog > main {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      clear: both;
+      color: #332f33;
+      font-size: 20px;
+      margin: 15px; }
+      .customDialog .dialog > main > img {
+        width: 300px; }
+    .customDialog .dialog > footer {
+      margin-top: 25px;
+      margin-bottom: 20px;
+      /*& > .buttons a {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                border: 1px #cccccc solid;
+                padding: 5px 10px;
+                text-decoration: none;
+                color: #333333;
+                border-radius: 5px;
+                margin: 3px;
+            }
+            & > .buttons a:hover {
+                margin: 1px;
+                border-radius: 0px;
+                padding: 7px 12px;
+            }
+            & > .buttons .danger {
+                color: #ffffff;
+                background-color: #ff6666;
+            }*/ }
+      .customDialog .dialog > footer > hr {
+        border: 1px #ececec solid; }
+      .customDialog .dialog > footer > .buttons {
+        float: right;
+        height: 30px;
+        margin: 10px; }

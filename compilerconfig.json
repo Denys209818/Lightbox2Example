@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "css/custom/StyleSheet.css",
+    "inputFile": "css/custom/StyleSheet.scss"
+  },
+  {
+    "outputFile": "css/custom/modalStyle.css",
+    "inputFile": "css/custom/modalStyle.scss"
+  }
+]

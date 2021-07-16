@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--    Назва сторінки  -->
+    <title>Головна сторінка</title>
+    <!--    Стилі   -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/dropzone.css" rel="stylesheet" />
+    <link href="/lib/cropperjs/cropper.min.css" rel="stylesheet" />
+    <link href="/css/font-awesome.css" rel="stylesheet" />
+    <link href="/lib/lightbox2/css/lightbox.css" rel="stylesheet" />
+    <link href="/css/gallery.css" rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <!--    Логотип сайта   -->
+    <link rel="shortcut icon" href="/images/logo.png" />
+</head>
+<body>
+    <!--Навігація Bootstrap 4.6-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                Головна сторінка
+            </a>
+            <!--Кнопка, яка з'являється, коли зменшується маштаб екрана-->
+            <button class="navbar-toggler" data-target="#mainNav" data-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
+            <!--Випадючий блок-контейнер-->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <!--    Елементи навігації  -->
+                <ul class="nav navbar-nav">
+                    <!--    Атрибути nav-item i nav-link потрібні для красивого відображення елементів навігації    -->
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Головна сторінка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/gallery.html" class="nav-link active">Галерея</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://lokeshdhakar.com/projects/lightbox2/" class="nav-link text-muted">
+                        <small>Lightbox2</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Контейнер, який містить усі фотографії-->
+    <div class="container">
+        <!--Заголовок і перший рядок фотографій з теми 'Галерея'-->
+        <h3 class="text-dark d-block">Галерея</h3>
+        <div class="row mt-3">
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/1.jpg" data-lightbox="group" data-title="Перша галерея" data-alt="first">
+                    <div class="container-fluid">
+                        <img src="/images/test/1.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/2.jpg" data-lightbox="group" data-title="Друга галерея" data-alt="second">
+                    <div class="container-fluid">
+                        <img src="/images/test/2.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/3.png" data-lightbox="group" data-title="Третя галерея" data-alt="third">
+                    <div class="container-fluid">
+                        <img src="/images/test/3.png" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/4.jpg" data-lightbox="group" data-title="Четверта галерея" data-alt="last">
+                    <div class="container-fluid">
+                        <img src="/images/test/4.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!--Заголовок і перший рядок фотографій з теми 'Локації'-->
+        <h3 class="text-dark d-block">Локації</h3>
+        <div class="row mt-3">
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/5.jpg" data-lightbox="group" data-title="Перша локація" data-alt="first">
+                    <div class="container-fluid">
+                        <img src="/images/test/5.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/6.jpg" data-lightbox="group" data-title="Друга локація" data-alt="second">
+                    <div class="container-fluid">
+                        <img src="/images/test/6.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/7.jpg" data-lightbox="group" data-title="Третя локація" data-alt="third">
+                    <div class="container-fluid">
+                        <img src="/images/test/7.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+            <!--Блок фотографії-->
+            <div class="col-md-3 col-sm-6 mt-1">
+                <!--Фотографія, яка слугує посиланням-->
+                <a href="/images/test/8.jpg" data-lightbox="group" data-title="Четверта локація" data-alt="last">
+                    <div class="container-fluid">
+                        <img src="/images/test/8.jpg" class="img-fluid" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--Блок, який містить пагінацію-->
+    <div class="container mt-5">
+        <!--Список елементів пагінації, які розміщені по центру-->
+        <ul class="pagination justify-content-center">
+            <!--Елементи пагінації-->
+            <li class="page-item active"><a class="page-link" href="/gallery.html">Назад</a></li>
+            <li class="page-item"><a class="page-link" href="/gallery.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="/gallery.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="/gallery.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="/gallery.html">4</a></li>
+            <li class="page-item"><a class="page-link" href="/gallery.html">5</a></li>
+            <li class="page-item"><a class="page-link" href="/gallery.html">6</a></li>
+            <li class="page-item active"><a href="/gallery.html" class="page-link">Вперед</a></li>
+        </ul>
+    </div>
+
+    <!--    JavaScript  -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/imask.js"></script>
+    <script src="/lib/cropperjs/cropper.min.js"></script>
+    <script src="/lib/lightbox2/js/lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--    Назва сторінки  -->
+    <title>Головна сторінка</title>
+    <!--    Стилі   -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/dropzone.css" rel="stylesheet" />
+    <link href="/lib/cropperjs/cropper.min.css" rel="stylesheet" />
+    <link href="/css/custom/modalStyle.css" rel="stylesheet" />
+    <link href="/css/font-awesome.css" rel="stylesheet" />
+
+    <meta charset="utf-8"/>
+    <!--    Логотип сайта   -->
+    <link rel="shortcut icon" href="/images/logo.png" />
+</head>
+<body>
+    <!--Навігація Bootstrap 4.6-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand">
+                Головна сторінка
+            </a>
+            <!--Кнопка, яка з'являється, коли зменшується маштаб екрана-->
+            <button class="navbar-toggler" data-target="#mainNav" data-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
+            <!--Випадючий блок-контейнер-->
+            <div class="collapse navbar-collapse" id="mainNav">
+                <!--    Елементи навігації  --> 
+                <ul class="nav navbar-nav">
+                    <!--    Атрибути nav-item i nav-link потрібні для красивого відображення елементів навігації    -->
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active">Головна сторінка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/gallery.html" class="nav-link">Галерея</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Контейнер, у якому відображаються продукти, додані користувачем-->
+    <div class="container">
+        <div class="row">
+            <div class="container mt-5 mb-5">
+                <!--Кнопка, яка відкриває модальне вікно і після заповнення додає продукт-->
+                <button class="btn btn-success mb-4" id="btnOpenModal">Додати новий продукт</button>
+
+                <!--Блок, який містить усі продукти-->
+                <div class="d-flex justify-content-center row" id="productsBlock">
+                    <!--Тестовий блок продукта-->
+                    <!--<div class="col-md-12">
+                        <div class="row p-2 bg-white border rounded">
+                            <div class="col-md-3 mt-1"><img class="img-fluid rounded product-image"
+                                                            src="https://i.imgur.com/QpjAiHq.jpg"></div>
+                            <div class="col-md-6 mt-1">
+                                <h5>Quant olap shirts</h5>
+                                <div class="d-flex flex-row">
+                                    <div class="ratings mr-2">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <span>310</span>
+                                </div>
+                                <div class="mt-1 mb-1 spec-1"><span>100% cotton</span><span class="dot"></span><span>Light weight</span><span class="dot"></span><span>Best finish<br></span></div>
+                                <div class="mt-1 mb-1 spec-1"><span>Unique design</span><span class="dot"></span><span>For men</span><span class="dot"></span><span>Casual<br></span></div>
+                                <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.<br><br></p>
+                            </div>
+                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                <div class="d-flex flex-row align-items-center">
+                                    <h4 class="mr-1">$13.99</h4><span class="strike-text">$20.99</span>
+                                </div>
+                                <h6 class="text-success">Free shipping</h6>
+                                <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button><button class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <!--Модальне вікно, яке відкривається при нажатті кнопки для додавання продукта-->
+        <div class="modal fade" data-backdrop="static" id="mainModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--Блок із заголовком модального вікна-->
+                    <div class="modal-header">
+                        <!--Заголовок модального вікна-->
+                        <h4 class="modal-title text-dark">Додати новий продукт</h4>
+                        <!--Кнопка для закриття модального вікна-->
+                        <button class="close" data-dismiss="modal" data-target="#mainModal">
+                            <!--Спеціальний символ X-->
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <!--Тіло модального вікна-->
+                    <div class="modal-body">
+                        <!--Форма для додавання нового продукту-->
+                        <form id="mainForm">
+                            <!--Група форми для заповнення назви продукту-->
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="txtName" placeholder="Ім'я продукту" />
+                                <label for="txtName">Ведіть коректне ім'я</label>
+                            </div>
+                            <!--Група форми для заповнення опису продукту-->
+                            <div class="form-group">
+                                <textarea class="form-control" id="txtDesc" rows="3" placeholder="Опис"></textarea>
+                                <label for="txtDesc">Ведіть коректний опис</label>
+                            </div>
+                            <!--Група форми для додавання ціни продукту-->
+                            <div class="form-group">
+                                <!--Розбиття групи форми на колонки у відношенні 1:11-->
+                                <div class="row">
+                                    <label for="txtPrice" class=" col-md-1 my-auto">Ціна</label>
+                                    <div class="col-md-11">
+                                        <input type="text" placeholder="Ціна" id="txtPrice" class="form-control" />
+                                    </div>
+                                </div>
+                                <label for="txtPrice">Ведіть коректну ціну</label>
+                            </div>
+                            <!--Група форми для додавання фотографії-->
+                            <div class="form-group">
+                                <!--Оголошення поля для додавання зображення технологією draganddrop-->
+                                <div id="dropzone" class="border cursor-pointer">
+                                    <!--Розміщення фотографії(малюнка групи форми, на який потрібно нажати або перенести фотографію)-->
+                                    <div class="text-center">
+                                        <!--Фотографія групи форми-->
+                                        <img src="/images/gallery.jpg" id="selectImage" alt="Обрати зображення"
+                                             class="py-2" width="200" height="200" />
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback">
+                                    <p class="text-center">Зображення не валідне</span>
+                                </div>
+                                <div class="valid-feedback">
+                                    <p class="text-center">Зображення валідне</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--Підвал модального вікна-->
+                    <div class="modal-footer">
+                        <!--Блок, який розміщується з права (float;right)-->
+                        <div class="pull-right">
+                            <!--Кнопки, для додавання елемента і скасування операції-->
+                            <button class="btn btn-secondary" data-dismiss="modal" data-target="#mainModal">Скасувати</button>
+                            <button class="btn btn-success" id="btnSaveChanges">Зберегти зміни</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Власне модальне вікно-->
+        <div class="customDialog" id="cropperModal">
+            <div class="dialog">
+                <!--Тіло модального вікна-->
+                <main>
+                    <!--Тег, у який загружаються фотографії для їх редагування cropper.js-->
+                    <img id="imageCropper" src="" height="400">
+                </main>
+                <!--Підвал модального вікна-->
+                <footer>
+                    <!--Лінія-->
+                    <hr />
+                    <div class="buttons">
+                        <!--Кнопка для скасування операції-->
+                        <button type="button" class="btn btn-secondary" data-closeCustomDialog>Скасувати</button>
+                        <!--Кнопка для підтвердження операції-->
+                        <button id="btnCropImg" class="btn btn-primary">Обрізати фото</button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    JavaScript  -->
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/js/popper.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/imask.js"></script>
+    <script src="/lib/cropperjs/cropper.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
